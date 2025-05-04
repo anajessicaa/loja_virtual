@@ -1,0 +1,22 @@
+.rating {
+  display: flex;
+}
+
+.star {
+  width: 1.3rem;
+  position: relative;
+  height: 1.2rem;
+  margin-block: 10px;
+}
+
+.starEmpty, .starFull {
+  font-size: 1.3rem;
+  position: absolute;
+  overflow: hidden;
+  color: rgb(40, 64, 244);
+}
+
+.starFull {
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -1,0 +1,172 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: rgb(19, 19, 19);
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.left_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  z-index: 11;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+
+.left_menu.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto; 
+}
+
+.left_menu_items {
+  margin-left: 1.2rem;
+  margin-top: 20%;
+  height: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.left_menu_items li {
+  margin-top: 1rem;
+}
+
+.left_menu_items a {
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.left_menu_items li a:hover {
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+
+.left_menu_items li a:hover {
+  color: gray;
+}
+
+.icon {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 1.5rem;
+}
+
+.icon_close {
+  color: black;
+}
+
+.btn-close {
+  align-self: flex-end;
+  margin-top: 1.2rem;
+  margin-right: 1rem;
+}
+
+.mobile-only {
+  display: flex;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+@media (min-width: 600px) {
+  .mobile-only {
+    display: none;
+  }
+  .desktop-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-menu li a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .desktop-menu li a:hover {
+    color: gray;
+  }
+
+  .left_menu {
+    display: none;
+  }
+
+  .cart-count {
+    top: 8px;
+    right: 8px;
+    left: unset;
+  }
+}
