@@ -16,6 +16,14 @@ function CartIcon({ onClick, total }) {
   );
 }
 
+function scrollToSection(id) {
+  navigate("/");
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }, 300);
+}
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -25,6 +33,14 @@ function Navbar() {
     (total, item) => total + item.quantidade,
     0
   );
+
+  const scrollToSection = (id) => {
+    navigate("/");
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
 
   return (
     <nav className="navBar">
@@ -46,7 +62,15 @@ function Navbar() {
         <ul className="desktop-menu">
           {menu.map((item) => (
             <li key={item.text}>
-              <a href={item.href}>{item.text}</a>
+              <Link
+                to="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.href.replace("#", ""));
+                }}
+              >
+                {item.text}
+              </Link>
             </li>
           ))}
           <CartIcon onClick={() => navigate("/carrinho")} total={totalItens} />
@@ -63,7 +87,16 @@ function Navbar() {
           <ul className="left_menu_items">
             {menu.map((item) => (
               <li key={item.text}>
-                <a href={item.href}>{item.text}</a>
+                <Link
+                  to="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMenuOpen(false);
+                    scrollToSection(item.href.replace("#", ""));
+                  }}
+                >
+                  {item.text}
+                </Link>
               </li>
             ))}
           </ul>

@@ -5,14 +5,14 @@ import Products from "../../components/Products/Products.jsx"
 
 function Home() {
   return (
-    <>
+    <div id="home">
       <Carousel />
       <main className="main">
         <AboutUs />
         <OurTeam />
         <Products />
       </main>
-    </>
+    </div>
   )
 }
 

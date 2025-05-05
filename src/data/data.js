@@ -104,7 +104,7 @@ const rawEquipe = [
 ];
 
 const menu = [
-  { href: "/", text: "Início" },
+  { href: "#home", text: "Início" },
   { href: "#quem-somos", text: "Quem Somos" },
   { href: "#nosso-time", text: "Nosso Time" },
   { href: "#produtos", text: "Produtos" },
