@@ -16,14 +16,6 @@ function CartIcon({ onClick, total }) {
   );
 }
 
-function scrollToSection(id) {
-  navigate("/");
-  setTimeout(() => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  }, 300);
-}
-
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
